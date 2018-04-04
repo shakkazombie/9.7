@@ -116,7 +116,7 @@ function checkRoundWinner(playerPick, computerPick) {
     var winnerIs = 'player';
 
     if (playerPick == computerPick) {
-        winnerIs = 'noone'; // remis
+        winnerIs = 'none';
     } else if (
         (computerPick == 'rock' && playerPick == 'scissors') ||
         (computerPick == 'scissors' && playerPick == 'paper') ||
@@ -133,22 +133,14 @@ function checkRoundWinner(playerPick, computerPick) {
 
 }
 
-//==========================================================================================================================================
 
-// 6.  setGamePoints - wtświetlenie sumy punktów
-
-//==========================================================================================================================================
 
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
 }
 
-//==========================================================================================================================================
 
-//7.  setGameEnd - zakończenie rozgrywki
-
-//==========================================================================================================================================
 
 function setGameEnd() {
 
@@ -160,13 +152,13 @@ function setGameEnd() {
         winner = player.name;
         winnerInfo.innerHTML = "The Winner is: " + winner;
         setGameElements();
-        //reset();
+
     } else if (computer.score == winningScore) {
         gameState = 'ended';
         winner = 'computer';
         console.log(gameState);
         winnerInfo.innerHTML = "The Winner is: " + winner;
         setGameElements();
-        //reset();
+
     }
 }
